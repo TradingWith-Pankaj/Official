@@ -718,47 +718,4 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-</body></html>",
-            imageSrc: "Pankaj.jpg"
-        };
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('page-name').textContent = config.pageName;
-            document.getElementById('logo-image').src = config.imageSrc;
-            document.getElementById('telegram-link').href = config.telegramLink;
-        });
-</script>
-    
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const btn = document.getElementById("telegram-link");
-  if (!btn) return;
-
-  btn.addEventListener("click", function (e) {
-
-    // ✅ Sirf real human click
-    if (!e.isTrusted) {
-      e.preventDefault();
-      return;
-    }
-
-    // ✅ Already tracked?
-    if (localStorage.getItem("telegram_subscribed") === "true") {
-      return;
-    }
-
-    localStorage.setItem("telegram_subscribed", "true");
-
-    const eventId = "tg_sub_" + Date.now();
-
-    if (typeof fbq !== "undefined") {
-      fbq('track', 'Subscribe', {}, { eventID: eventId });
-    }
-
-  });
-
-});
-</script>
-
-
 </body></html>
